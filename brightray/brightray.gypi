@@ -132,9 +132,17 @@
               '_LARGEFILE64_SOURCE',
               '_FILE_OFFSET_BITS=64',
             ],
+            'cflags': [
+              '-fno-strict-aliasing',
+              '-fomit-frame-pointer',
+              '-fstack-protector',
+              '-funwind-tables',
+              '--param=ssp-buffer-size=4',
+            ],
             'cflags_cc': [
               '-D__STRICT_ANSI__',
               '-fno-rtti',
+              '-fno-exceptions',
             ],
           }],  # OS=="linux"
           ['OS=="mac"', {
